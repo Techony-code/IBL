@@ -28,21 +28,28 @@ export default function FocusAreas() {
   return (
     <section
       id="focus"
-      className="py-24 bg-slate-50 dark:bg-gray-950"
+      className="py-20 sm:py-24 md:py-28 bg-slate-50 dark:bg-gray-950"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.h3
-          className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 dark:text-white"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Heading */}
+        <motion.div
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Our Focus Areas
-        </motion.h3>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
+            Our Focus Areas
+          </h3>
 
+          <div className="w-20 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
+        </motion.div>
+
+        {/* Grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -58,22 +65,25 @@ export default function FocusAreas() {
           {focusAreas.map((area, index) => (
             <motion.div
               key={index}
-              className="p-8 rounded-2xl bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition"
+              className="group p-6 sm:p-8 rounded-2xl bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 }
               }}
-              transition={{ duration: 0.5 }}
             >
-              <h4 className="text-xl font-semibold mb-4 text-emerald-700 dark:text-emerald-400">
+              {/* Title */}
+              <h4 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-emerald-700 dark:text-emerald-400 group-hover:text-emerald-600 transition">
                 {area.title}
               </h4>
-              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+
+              {/* Description */}
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                 {area.description}
               </p>
             </motion.div>
           ))}
         </motion.div>
+
       </div>
     </section>
   );

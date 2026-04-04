@@ -1,18 +1,23 @@
+// src/components/Navbar.jsx
 import { useContext, useEffect, useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import { ThemeContext } from "../context/ThemeContext";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 
-const sections = [ "Home","about", "focus", "services", "contact"];
+const sections = ["home", "about", "focus", "services", "contact"];
 
 export default function Navbar() {
   const { theme } = useContext(ThemeContext);
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
+  // Scroll tracking for active link
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPos = window.scrollY + 100;
+      const scrollPos = window.scrollY + 120; // offset for sticky navbar
+      setScrolled(window.scrollY > 10); // small shadow when scrolling
+
       for (let section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -30,10 +35,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav
+      className={`sticky top-0 z-50 backdrop-blur transition-all duration-300 border-b ${
+        scrolled
+          ? "bg-white/90 dark:bg-gray-900/90 shadow-sm"
+          : "bg-white/70 dark:bg-gray-900/70"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        
         {/* Brand */}
-        <h1 className="text-xl font-bold text-emerald-700 dark:text-emerald-400">
+        <h1 className="text-xl sm:text-2xl font-bold text-emerald-700 dark:text-emerald-400">
           Iyewa Business Lab
         </h1>
 
@@ -43,13 +55,17 @@ export default function Navbar() {
             <a
               key={section}
               href={`#${section}`}
-              className={`hover:text-emerald-600 dark:hover:text-emerald-300 transition ${
+              className={`relative hover:text-emerald-600 dark:hover:text-emerald-300 transition ${
                 activeSection === section
                   ? "text-emerald-700 dark:text-emerald-400 font-semibold"
                   : ""
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
+              {/* Active underline */}
+              {activeSection === section && (
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-emerald-600 dark:bg-emerald-400 rounded-full"></span>
+              )}
             </a>
           ))}
         </div>
@@ -71,27 +87,29 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-          <ul className="flex flex-col gap-4 p-6">
-            {sections.map((section) => (
-              <li key={section}>
-                <a
-                  href={`#${section}`}
-                  onClick={() => setMenuOpen(false)} // close menu on click
-                  className={`block text-lg text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition ${
-                    activeSection === section
-                      ? "text-emerald-700 dark:text-emerald-400 font-semibold"
-                      : ""
-                  }`}
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div
+        className={`md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-max-height duration-300 overflow-hidden ${
+          menuOpen ? "max-h-96" : "max-h-0"
+        }`}
+      >
+        <ul className="flex flex-col gap-4 p-6">
+          {sections.map((section) => (
+            <li key={section}>
+              <a
+                href={`#${section}`}
+                onClick={() => setMenuOpen(false)} // close menu on click
+                className={`block text-lg text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition ${
+                  activeSection === section
+                    ? "text-emerald-700 dark:text-emerald-400 font-semibold"
+                    : ""
+                }`}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }

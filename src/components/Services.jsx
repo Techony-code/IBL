@@ -12,11 +12,10 @@ const services = [
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="py-24 bg-white dark:bg-gray-900"
-    >
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="py-24 bg-white dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Title */}
         <motion.h3
           className="text-3xl md:text-4xl font-bold text-center mb-16 text-slate-800 dark:text-white"
           initial={{ opacity: 0, y: 40 }}
@@ -27,6 +26,7 @@ export default function Services() {
           Our Services
         </motion.h3>
 
+        {/* Services Grid */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
@@ -43,7 +43,7 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="p-8 rounded-2xl bg-slate-50 dark:bg-gray-950 border border-slate-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition"
+              className="p-8 rounded-2xl bg-slate-50 dark:bg-gray-950 border border-slate-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0 }

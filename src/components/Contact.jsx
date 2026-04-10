@@ -21,7 +21,7 @@ export default function Contact() {
             Get in Touch
           </h3>
           <p className="mt-4 max-w-2xl mx-auto text-slate-600 dark:text-slate-300 text-sm sm:text-base md:text-lg">
-            Have questions, want to partner with us, or ready to join Iyewa
+            Have questions, want to partner with us, or ready to join Yewa
             Business Lab? We’d love to hear from you.
           </p>
         </motion.div>
@@ -40,7 +40,7 @@ export default function Contact() {
             {[
               {
                 title: "Email",
-                value: "info@iyewabusinesslab.org",
+                value: "info@yewabusinesslab.org",
               },
               {
                 title: "Phone",
@@ -48,7 +48,7 @@ export default function Contact() {
               },
               {
                 title: "Location",
-                value: "Iyewaland, Nigeria",
+                value: "Ikeja, Lagos, Nigeria",
               },
             ].map((item, index) => (
               <div

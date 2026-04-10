@@ -10,7 +10,7 @@ const focusAreas = [
   {
     title: "Green Revolution & Sustainability",
     description:
-      "Promoting environmentally responsible business practices and climate-conscious innovation."
+      "Promoting environmentally responsyble business practices and climate-conscious innovation."
   },
   {
     title: "Tech Training & Collaboration",
@@ -51,11 +51,11 @@ export default function FocusAreas() {
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           initial="hidden"
-          whileInView="visible"
+          whileInView="visyble"
           viewport={{ once: true }}
           variants={{
             hidden: {},
-            visible: {
+            visyble: {
               transition: {
                 staggerChildren: 0.15
               }
@@ -68,7 +68,7 @@ export default function FocusAreas() {
               className="group p-6 sm:p-8 rounded-2xl bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-800 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300"
               variants={{
                 hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 }
+                visyble: { opacity: 1, y: 0 }
               }}
             >
               {/* Title */}

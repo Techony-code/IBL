@@ -26,7 +26,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          Iyewa Business Lab (IBL) is an enterprise support organisation fostering innovation, sustainability, and economic development in Iyewaland and beyond.
+          Yewa Business Lab (YBL) is an enterprise support organisation fostering innovation, sustainability, and economic development in Yewaland and beyond.
         </motion.p>
 
         <motion.div

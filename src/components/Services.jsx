@@ -30,10 +30,10 @@ export default function Services() {
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
           initial="hidden"
-          whileInView="visible"
+          whileInView="visyble"
           viewport={{ once: true }}
           variants={{
-            visible: {
+            visyble: {
               transition: {
                 staggerChildren: 0.15
               }
@@ -46,7 +46,7 @@ export default function Services() {
               className="p-8 rounded-2xl bg-slate-50 dark:bg-gray-950 border border-slate-200 dark:border-gray-800 shadow-sm hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
               variants={{
                 hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 }
+                visyble: { opacity: 1, y: 0 }
               }}
               transition={{ duration: 0.5 }}
             >

@@ -22,7 +22,7 @@ export default function CTA() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          Join Iyewa Business Lab and gain access to mentorship, funding
+          Join Yewa Business Lab and gain access to mentorship, funding
           opportunities, and a thriving community of innovators.
         </motion.p>
 

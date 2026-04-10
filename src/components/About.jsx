@@ -17,7 +17,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 dark:text-white">
-            About Iyewa Business Lab
+            About Yewa Business Lab
           </h3>
 
           <div className="w-20 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
@@ -30,11 +30,11 @@ export default function About() {
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Iyewa Business Lab (IBL) is an enterprise support organisation committed
+          Yewa Business Lab (YBL) is an enterprise support organisation committed
           to accelerating startups, SMEs, and professionals through innovation,
           capacity building, and sustainability-focused initiatives. Our work
           aligns with the United Nations Sustainable Development Goals (SDGs),
-          fostering inclusive economic growth and long-term impact in Iyewaland
+          fostering inclusive economic growth and long-term impact in Yewaland
           and beyond.
         </motion.p>
 

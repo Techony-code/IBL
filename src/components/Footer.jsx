@@ -1,4 +1,6 @@
 // src/components/Footer.jsx
+import logo from "../assets/yewa.png";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -9,12 +11,19 @@ export default function Footer() {
           
           {/* Brand */}
           <div>
-            <h4 className="text-lg sm:text-xl font-bold text-white mb-4">
-              Iyewa Business Lab
-            </h4>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={logo}
+                alt="Yewa Business Lab Logo"
+                className="h-20 w-auto"
+              />
+              <h4 className="text-lg sm:text-xl font-bold text-white">
+                Yewa Business Lab
+              </h4>
+            </div>
             <p className="text-sm sm:text-base text-gray-400 leading-relaxed max-w-sm">
               Empowering entrepreneurs and driving sustainable economic
-              development across Iyewaland and beyond.
+              development across Yewaland and beyond.
             </p>
           </div>
 
@@ -48,8 +57,8 @@ export default function Footer() {
               Contact
             </h5>
             <div className="space-y-2 text-sm sm:text-base">
-              <p className="text-gray-400">Iyewaland, Nigeria</p>
-              <p className="text-gray-400">info@iyewabusinesslab.org</p>
+              <p className="text-gray-400">Ikeja, Lagos, Nigeria</p>
+              <p className="text-gray-400">info@yewabusinesslab.org</p>
             </div>
           </div>
 
@@ -59,7 +68,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
           
           <p>
-            © {new Date().getFullYear()} Iyewa Business Lab. All rights reserved.
+            © {new Date().getFullYear()} Yewa Business Lab. All rights reserved.
           </p>
 
           {/* Optional Social Links */}

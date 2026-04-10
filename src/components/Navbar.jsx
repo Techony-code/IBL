@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import DarkModeToggle from "./DarkModeToggle";
 import { ThemeContext } from "../context/ThemeContext";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+import logo from "../assets/yewa.png";
 
 const sections = ["home", "about", "focus", "services", "contact"];
 
@@ -45,9 +46,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         
         {/* Brand */}
-        <h1 className="text-xl sm:text-2xl font-bold text-emerald-700 dark:text-emerald-400">
-          Iyewa Business Lab
-        </h1>
+        <a href="#home" className="flex items-center gap-2">
+          <img 
+            src={logo} 
+            alt="Yewa Business Lab Logo" 
+            className="h-10 w-auto sm:h-20"
+          />
+          <span className="text-xl sm:text-2xl font-bold text-emerald-700 dark:text-emerald-400">
+            Yewa Business Lab
+          </span>
+        </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 font-medium text-slate-700 dark:text-slate-200">

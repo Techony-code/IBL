@@ -50,7 +50,7 @@ export default function Navbar() {
           <img 
             src={logo} 
             alt="Yewa Business Lab Logo" 
-            className="h-10 w-auto sm:h-20"
+            className="h-12 w-auto sm:h-20"
           />
           <span className="text-xl sm:text-2xl font-bold text-emerald-700 dark:text-emerald-400">
             Yewa Business Lab
